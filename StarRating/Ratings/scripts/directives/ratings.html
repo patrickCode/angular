@@ -1,0 +1,16 @@
+<div class="rategroup">
+<h4>{{::skillType}}</h4>
+    <form class="rating">
+        <input type="radio" name="rating" value="4" ng-checked="currentRate == 4" />
+        <label for="star5" title="Expert" ng-click="click(4)">4</label>
+        <input type="radio" name="rating" value="3" ng-checked="currentRate == 3" />
+        <label for="star4" title="Experienced" ng-click="click(3)">3</label>
+        <input type="radio" name="rating" value="2" ng-checked="currentRate == 2" />
+        <label for="star3" title="Informed" ng-click="click(2)">2</label>
+        <input type="radio" name="rating" value="1" ng-checked="currentRate == 1" />
+        <label for="star2" title="Introductory" ng-click="click(1)">1</label>
+        <input type="radio" name="rating" value="0" ng-checked="currentRate == 0" />
+        <label for="star1" title="None" ng-click="click(0)">0</label>
+    </form>
+<br>
+</div>

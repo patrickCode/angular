@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>
+        Rating System
+        </title>
+        <link href="style.css" rel="stylesheet" />
+
+        
+        
+    </head>
+    <body ng-app="app" ng-controller="ratingsController">
+        <h3>Ratings</h3>
+
+        <div ng-repeat="skill in skills">
+                <ratings current-rate="skill.Rate" skill-type={{::skill.Label}} changed="parentrate(type, data)"></ratings>
+                <span ng-hide="skill.Label===selectedFuncSkill" ng-click="changeFuncSkill(skill.Label)">Open</span>
+                    <div ng-if="skill.Label===selectedFuncSkill">
+                        <div ng-repeat="subSkill in selectedChildrenSkills">
+                        <ratings current-rate="subSkill.Rate" skill-type={{::subSkill.Label}} changed="childrate(type, data)"></ratings>
+                    </div>
+                    </div>
+                
+                <br>
+                <hr>    
+       </div>
+        
+        {{skills | json}}
+
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src = "scripts/app.js"></script>
+        <script src = "scripts/ratingsCtrl.js"></script>
+        <script src = "scripts/directives/ratings.js"></script>
+    </body>
+</html>
