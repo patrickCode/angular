@@ -1,0 +1,21 @@
+{
+  "name": "college-maintenance",
+  "version": "1.0.0",
+  "description": "Maintenance site for College",
+  "author": "Pratik Bhattacharya",
+  "license": "MIT License",
+  "scripts": {
+    "start": "npm run lite",
+    "lite": "lite-server"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^2.2.0",
+    "lite-server": "^2.2.2"
+  }
+}

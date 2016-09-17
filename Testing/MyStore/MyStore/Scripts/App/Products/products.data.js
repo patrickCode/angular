@@ -4,7 +4,7 @@
 
         var getAllProducts = function () {
             var deferred = $q.defer();
-            var endpoint = "http://localhost:13684/api/products";
+            var endpoint = "http://creativityproducts.azurewebsites.net/api/products";
             proxy.get(endpoint)
                 .then(function (response) {
                     deferred.resolve(response.data);

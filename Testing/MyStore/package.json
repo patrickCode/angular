@@ -1,0 +1,23 @@
+{
+  "name": "my-store",
+  "version": "1.0.0",
+  "description": "E-Commerce Store",
+  "author": "Pratik Bhattachartya",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run lite",
+    "lite": "lite-server"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "benv": "^3.0.0",
+    "bootstrap": "^3.3.7",
+    "qunit": "^0.9.1"
+  },
+  "devDependencies": {
+    "concurrently": "^2.2.0",
+    "lite-server": "^2.2.2"
+  },
+  "repository": {}
+}

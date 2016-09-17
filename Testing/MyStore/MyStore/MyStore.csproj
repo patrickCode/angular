@@ -85,6 +85,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="index.html" />
     <Content Include="Scripts\App\app.js" />
+    <Content Include="Scripts\App\Common\minMaxFilter.js" />
     <Content Include="Scripts\App\Common\navigator.js" />
     <Content Include="Scripts\App\Common\proxy.js" />
     <Content Include="Scripts\App\Common\ratings.dir.js" />
