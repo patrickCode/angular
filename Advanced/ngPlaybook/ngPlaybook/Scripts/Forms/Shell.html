@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="forms">
+<head>
+    <title>Ng-Playbook - Forms</title>
+</head>
+<body>
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/Site.css" rel="stylesheet" />
+    <style>
+        input.ng-touched.ng-invalid {
+            border: 2px #ff0000 solid;
+        }
+        .starpreview {
+            color: rgba(255, 255, 128, 128);
+        }
+    </style>
+
+    <div class="container body-content">
+
+        <div class="container">
+            <div ng-view></div>
+        </div>
+    </div>
+
+    <script src="/Scripts/Lib/jquery-1.10.2.js"></script>
+    <script src="/Scripts/Lib/modernizr-2.6.2.js"></script>
+    <script src="/Scripts/Lib/respond.js"></script>
+    <script src="/Scripts/Lib/bootstrap.js"></script>
+    <script src="/Scripts/Lib/angular.js"></script>
+    <script src="/Scripts/Lib/angular-animate.js"></script>
+    <script src="../Lib/angular-messages.js"></script>
+    <script src="/Scripts/Lib/Google Chart/google-chart.js"></script>
+    <script src="../Lib/angular-route.js"></script>
+    <script src="/Scripts/Lib/ui-router.js"></script>
+    <script src="/Scripts/Lib/ui-bootstrap-tpls-0.12.0.js"></script>
+
+    <script src="module.js"></script>
+    <script src="Services/user.js"></script>
+    <script src="Controllers/profileController.js"></script>
+    <script src="Controllers/resultController.js"></script>
+    <script src="Directives/forminput.js"></script>
+    <script src="Directives/decRating.js"></script>
+
+</body>
+</html>

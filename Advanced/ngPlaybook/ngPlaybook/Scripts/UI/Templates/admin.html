@@ -1,0 +1,28 @@
+﻿<div ng-controller="adminController as model">
+    <h3 class="text-muted">Administrator List</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Level</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="emp in model.employees">
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+                <td>
+                    <!--<emp-rating value="emp.level" min="1" max="5"></emp-rating>-->
+                    <emp-ratingg value ="emp.level" min="1" max="5"></emp-ratingg>
+</td>
+                <td>
+                    <button class="btn btn-xs btn-danger" ng-click="model.promote(emp)">
+                        Promote
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

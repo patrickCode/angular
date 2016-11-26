@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="ui">
+<head>
+    <title>Ng-Playbook - UI</title>
+</head>
+<body>
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/Site.css" rel="stylesheet" />
+    <style>
+        .starpreview {
+            color: rgba(255, 255, 128, 128);
+        }
+    </style>
+
+    <navbar></navbar>
+
+    <div class="container body-content">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <ui-view></ui-view>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Scripts/Lib/jquery-1.10.2.js"></script>
+    <script src="/Scripts/Lib/modernizr-2.6.2.js"></script>
+    <script src="/Scripts/Lib/respond.js"></script>
+    <script src="/Scripts/Lib/bootstrap.js"></script>
+    <script src="/Scripts/Lib/angular.js"></script>
+    <script src="/Scripts/Lib/angular-animate.js"></script>
+    <script src="/Scripts/Lib/Google Chart/google-chart.js"></script>
+    <script src="/Scripts/Lib/ui-router.js"></script>
+    <script src="/Scripts/Lib/ui-bootstrap-tpls-0.12.0.js"></script>
+
+
+
+    <script src="/Scripts/Common/module.js"></script>
+    <script src="/Scripts/UI/module.js"></script>
+    <script src="/Scripts/UI/Directives/navbar.js"></script>
+    <!--<script src="/Scripts/UI/Directives/rating.js"></script>-->
+    <script src="/Scripts/UI/Directives/decRating.js"></script>
+    <script src="Services/stateChangeErrors.js"></script>
+    <script src="/Scripts/UI/Controllers/healthController.js"></script>
+    <script src="/Scripts/UI/Controllers/perfController.js"></script>
+    <script src="Controllers/errorsController.js"></script>
+    <script src="Controllers/usageController.js"></script>
+
+    <script src="Services/employee.js"></script>
+    <script src="Services/confirmPromotion.js"></script>
+    <script src="Controllers/adminController.js"></script>
+</body>
+</html>
