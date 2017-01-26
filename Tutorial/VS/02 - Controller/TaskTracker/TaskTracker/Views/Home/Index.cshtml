@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body ng-app="taskTrackerApp">
+    <div ng-controller="taskController">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand">{{applicationName}}</div>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 10px;">
+            <div class="row">
+                <div class="col-lg-6 col-md-9">
+                    <form>
+                        <div class="form-group">
+                            <label for="tasktitle">Title</label>
+                            <input class="form-control" id="tasktitle" type="text" ng-model="task.title" />
+                        </div>
+                        <div class="form-group">
+                            <label for="taskdescription">Description</label>
+                            <textarea class="form-control" id="taskdescription" ng-model="task.description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskassigned">Assigned To</label>
+                            @*<input class="form-control" id="taskassigned" type="text" ng-model="task.assignedTo" />*@
+                            <select class="form-control" ng-model="task.assignedTo" id="taskassigned">
+                                @*<option value="johnmc@microsoft.com">John McClane</option>
+                                <option value="nfury@microsoft.com">Nick Fury</option>
+                                <option value="rdeckard@microsoft.com">Rick Deckard</option>
+                                <option value="leon@microsoft.com">Léon</option>*@
+                                <option ng-repeat="user in users" value="{{user.alias}}">{{user.name}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskpriority">Priority</label>
+                            <div id="taskpriority">
+                                <label>
+                                    <input type="radio" ng-model="task.priority" value="high" />
+                                    High
+                                </label>
+                                <label>
+                                    <input type="radio" ng-model="task.priority" value="medium" />
+                                    Medium
+                                </label>
+                                <label>
+                                    <input type="radio" ng-model="task.priority" value="low" />
+                                    Low
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskeffort">Effort</label>
+                            <input class="form-control" type="number" id="taskeffort" ng-model="task.effort" />
+                        </div>
+                        <div class="form-group">
+                            <label for="taskestimate">Estimated Days</label>
+                            <input class="form-control" type="number" id="taskestimate" ng-model="task.estimatedDays" />
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-default" type="submit" ng-click="submitTask()">Submit</button>
+                            <button class="btn btn-default" type="reset" ng-class="reset()">Reset</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 col-md-3">
+                    <div ng-hide="taskSubmitted" class="label label-danger">
+                        Error: {{errorMessage}}
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Task: {{task.title}}</div>
+                        <div class="panel-body">
+                            {{task.description}}<br />
+                            <div class="label label-info">
+                                Priority:  {{task.priority}}
+                            </div><br />
+                            <div class="label label-info">
+                                Owner:  {{task.assignedTo}}
+                            </div><br />
+                            <div class="label label-info">
+                                @*Effort: {{task.effort}}*@
+                                Effort: {{effortToString(task.effort)}}
+                            </div><br />
+                            <div class="label label-info">
+                                Estimated Days: {{task.estimatedDays}}
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-link" ng-click="getEstimatedDate(task.estimatedDays)">Get Date</button>
+                                <div class="label label-info" ng-show="task.estimatedDate">
+                                    Estimated Date of Completion: {{task.estimatedDate}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - {{companyInfo}}</p>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/library")
+    @Scripts.Render("~/bundles/app")
+</body>
+</html>
