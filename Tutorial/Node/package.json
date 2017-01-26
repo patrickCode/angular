@@ -1,0 +1,37 @@
+{
+  "name": "tasktracker",
+  "version": "1.0.0",
+  "description": "Application used for tracking tasks. Tutorial application showing the various concepts of Angular.JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickCode/angular.git"
+  },
+  "keywords": [
+    "angular.js",
+    "angular",
+    "angular",
+    "1",
+    "angular",
+    "1.x",
+    "angular1.x",
+    "angular1",
+    "angular",
+    "tutorials",
+    "tutorial"
+  ],
+  "author": "Pratik Bhattacharya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patrickCode/angular/issues"
+  },
+  "homepage": "https://github.com/patrickCode/angular#readme",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
